@@ -1,6 +1,2 @@
 #!/bin/bash
-ls -la
-cd ..
-ls -la
-cd /boot
-ls -la
+ls -la | tee >(cd .. && ls -la) >(cd /boot && ls -la >/dev/tty)
